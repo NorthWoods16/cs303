@@ -116,7 +116,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
-    <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
