@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\john\source\repos\cs3032\library book queue\library book queue\main.cpp(7): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\date.h(52): warning C4715: 'Date::toString': not all control paths return a value
+  Library Book Queue.vcxproj -> C:\Users\John\Source\Repos\cs3032\Library Book Queue\Debug\Library Book Queue.exe
