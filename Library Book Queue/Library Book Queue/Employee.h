@@ -1,6 +1,5 @@
 #pragma once
-#include "Library.h"
-struct Employee: public Library
+struct Employee
 {
 private:
 
