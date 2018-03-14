@@ -17,4 +17,6 @@ protected:
 public:
 	void set_name(string n) {name = n;}
 	string get_name() {return name;}
+	void set_startDate(Date s) {start_date = s;}
+	Date get_startDate() {return start_date;}
 };

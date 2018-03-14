@@ -1,6 +1,8 @@
 #include "Library.h"
 #include "Employee.h"
 #include<iostream>
+#include<algorithm>
+#include<iterator>
 
 using namespace std;
 
@@ -21,7 +23,20 @@ void Library::addEmployee(string Name) {
 }
 
 void Library::circulateBook(string title, Date startDate) {
-
-
+	Book newBook;
+	bool found = false;
+	for (unsigned int i = 0; i < archBooks.size(); i++) {
+		if (archBooks[i].get_name() == title) {
+			newBook.set_name(archBooks[i].get_name());
+			newBook.set_startDate(startDate);
+			circBooks.push_back(newBook);
+			archBooks.erase(archBooks.begin() + (i - 1));
+			found = true;
+			break;
+		}
+		if (i == (archBooks.size() - 1) && !found){
+			throw invalid_argument("Error: title not found");
+		}
+	}
 }
 
