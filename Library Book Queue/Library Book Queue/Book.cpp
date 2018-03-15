@@ -32,6 +32,10 @@ bool Book::pass_on(Date curdate) {
 	}
 }
 
+void Book::push(Employee* e, int p){
+	queue.push(e, p);
+}
+
 void Book::set_title(std::string t) { title = t; }
 
 std::string Book::get_title() { return title; }
@@ -48,3 +52,4 @@ void Book::set_endDate(Date e) { end_date = e; }
 
 Date Book::get_endDate() { return end_date; }
 
+Employee* Book::getHolder() { return emp_with_book; }
