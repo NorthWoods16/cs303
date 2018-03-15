@@ -9,7 +9,7 @@ bool Book::pass_on(Date curdate) {
 		emp_with_book->retaintingTime = last_pass - curdate;
 		last_pass = curdate;
 
-		if (!queue.empty()) {
+		if (!queue.isempty()) {
 			emp_with_book = queue.front();
 			queue.pop();
 			emp_with_book->waitingTime = curdate - start_date;
@@ -21,7 +21,7 @@ bool Book::pass_on(Date curdate) {
 		}
 	}
 	else {
-		if (!queue.empty()) {
+		if (!queue.isempty()) {
 			emp_with_book = queue.front();
 			queue.pop();
 			return true;
