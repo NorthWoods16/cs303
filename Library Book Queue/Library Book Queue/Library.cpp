@@ -4,11 +4,11 @@
 #include<algorithm>
 #include<iterator>
 
-/*TODO
+using namespace std;
+
+/*TODO 
 	Add exceptions where they belong
 	define update_queues*/
-
-using namespace std;
 
 void Library::addBook(string bookName) {
 	if (bookName == "")
@@ -62,4 +62,13 @@ bool Library::pass_on(string title, Date curdate) {
 		}
 	}
 	//throw error if iteration reaches here
+}
+
+
+void Library::update_queues(Employee* e) {
+	for (int i = 0; i < circBooks.size(); i++) {
+		if (circBooks[i].contains(e)) {
+			circBooks[i].update(e);
+		}
+	}
 }
