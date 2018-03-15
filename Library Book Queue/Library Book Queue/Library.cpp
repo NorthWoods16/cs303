@@ -38,10 +38,11 @@ void Library::circulateBook(string title, Date startDate) {
 			found = true;
 			break;
 		}
-		if (i == (archBooks.size() - 1) && !found){
+		if (i == (archBooks.size() - 1) && !found) {
 			throw invalid_argument("Error: title not found");
 		}
 	}
+
 }
 
 bool Library::pass_on(string title, Date curdate) {
@@ -72,3 +73,4 @@ void Library::update_queues(Employee* e) {
 		}
 	}
 }
+
