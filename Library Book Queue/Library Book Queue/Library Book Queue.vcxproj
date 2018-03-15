@@ -118,11 +118,15 @@
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Priority_Pair.cpp" />
+    <ClCompile Include="Priority_Queue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="Library.h" />
+    <ClInclude Include="Priority_Pair.h" />
+    <ClInclude Include="Priority_Queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
