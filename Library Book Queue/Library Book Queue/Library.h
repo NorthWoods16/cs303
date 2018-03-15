@@ -5,13 +5,9 @@
 #include <vector>
 
 /*What has changed
-	moved pass_on from private to public
-	changed pass on from void to bool
-	updated pass_on to accept two parameters; title and current date
-	added declaration for update queues function*/
+	added definition for update_queues*/
 
-/*TODO
-	add definition for update_queues function*/
+/*TODO*/
 
 using namespace std;
 
