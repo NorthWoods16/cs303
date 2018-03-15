@@ -4,8 +4,8 @@
 #include"Employee.h"
 #include<vector>
 /*What has changed
-	changed pass_on from void to bool
-	Defined pass_on function
+	added place holder for push function
+	added getter for employee with the book
 */
 
 /* TODO
@@ -27,6 +27,7 @@ public:
 	Book(std::string);
 
 	bool pass_on(Date);
+	void push(Employee*, int priority);
 
 	// Getters and Setters
 	void set_title(std::string);
@@ -37,5 +38,6 @@ public:
 	Date get_lastPass();
 	void set_endDate(Date);
 	Date get_endDate();
+	Employee* getHolder();
 
 };
