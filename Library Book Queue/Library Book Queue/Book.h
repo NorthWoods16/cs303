@@ -4,15 +4,15 @@
 #include"Employee.h"
 #include<vector>
 /*What has changed
-	added place holder for push function
-	added getter for employee with the book
+	added declarations for contains, update, and assignment operator
 */
 
 /* TODO
 	Merge with updated version of priority_queue
-	define pass_on
-	add push Function
 	add Exceptions
+	add equality operator
+	define contains
+	define update
 	*/
 
 class Book
@@ -28,7 +28,9 @@ public:
 
 	bool pass_on(Date);
 	void push(Employee*, int priority);
-
+	bool contains(Employee*);
+	void update(Employee*);
+	Book& operator=(Book& rhs);
 	// Getters and Setters
 	void set_title(std::string);
 	std::string get_title();
