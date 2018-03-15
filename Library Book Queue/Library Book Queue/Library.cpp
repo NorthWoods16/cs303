@@ -4,6 +4,10 @@
 #include<algorithm>
 #include<iterator>
 
+/*TODO
+	Add exceptions where they belong
+	define update_queues*/
+
 using namespace std;
 
 void Library::addBook(string bookName) {
@@ -40,3 +44,22 @@ void Library::circulateBook(string title, Date startDate) {
 	}
 }
 
+bool Library::pass_on(string title, Date curdate) {
+	for (size_t i = 0; i < circBooks.size(); i++) {
+		if (circBooks[i].get_title() == title) {
+			Employee* prev_holder = circBooks[i].getHolder();
+			if (circBooks[i].pass_on(curdate)) {
+				update_queues(prev_holder);
+				return true;
+			}
+			else {
+				update_queues(prev_holder);
+				circBooks[i].set_endDate(curdate);
+				archBooks.push_back(circBooks[i]);
+				circBooks.erase(circBooks.begin() + (i - 1));
+				return false;
+			}
+		}
+	}
+	//throw error if iteration reaches here
+}
