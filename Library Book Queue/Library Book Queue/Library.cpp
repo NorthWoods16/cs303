@@ -7,7 +7,7 @@ using namespace std;
 
 /*TODO 
 	Add exceptions where they belong
-	define update_queues*/
+*/
 
 void Library::addBook(string bookName) {
 	if (bookName == "")
@@ -74,7 +74,7 @@ bool Library::pass_on(string title, Date curdate) {
 void Library::update_queues(Employee* e) {
 	for (int i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].contains(e)) {
-			circBooks[i].update(e);
+			circBooks[i].update(e, e->waitingTime - e->retaintingTime);
 		}
 	}
 }

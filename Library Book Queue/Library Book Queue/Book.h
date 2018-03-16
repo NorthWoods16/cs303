@@ -5,14 +5,14 @@
 #include<vector>
 /*What has changed
 	added declarations for contains, update, and assignment operator
+	defined assignment operator
 */
 
 /* TODO
 	Merge with updated version of priority_queue
 	add Exceptions
-	add equality operator
 	define contains
-	define update
+	change everything to nullptr
 	*/
 
 class Book
@@ -25,11 +25,12 @@ private:
 public:
 	Book();
 	Book(std::string);
+	Book(Book&);
 
 	bool pass_on(Date);
 	void push(Employee*, int priority);
 	bool contains(Employee*);
-	void update(Employee*);
+	void update(Employee*, int p);
 	Book& operator=(Book& rhs);
 	// Getters and Setters
 	void set_title(std::string);
