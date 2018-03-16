@@ -1,4 +1,57 @@
-﻿  Priority_Pair.cpp
+﻿  Book.cpp
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): error C2228: left of '.isempty' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): error C2228: left of '.front' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): error C2228: left of '.pop' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): error C2228: left of '.isempty' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): error C2228: left of '.front' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): error C2228: left of '.pop' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): note: type is 'unknown-type'
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): error C2065: 'queue': undeclared identifier
+c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): error C2228: left of '.push' must have class/struct/union
+  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): note: type is 'unknown-type'
+  Library.cpp
+c:\users\ak058214\cs303\library book queue\library book queue\library.cpp(70): warning C4018: '<': signed/unsigned mismatch
+c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2710): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Book' (or there is no acceptable conversion)
+  c:\users\ak058214\cs303\library book queue\library book queue\book.h(33): note: could be 'Book &Book::operator =(Book &)'
+  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2710): note: while trying to match the argument list '(Book, Book)'
+  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2729): note: see reference to function template instantiation '_OutIt std::_Move_unchecked1<_InIt,_OutIt>(_InIt,_InIt,_OutIt,std::_General_ptr_iterator_tag)' being compiled
+          with
+          [
+              _OutIt=Book *,
+              _InIt=Book *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\vector(1629): note: see reference to function template instantiation '_OutIt *std::_Move_unchecked<Book*,Book*>(_InIt,_InIt,_OutIt)' being compiled
+          with
+          [
+              _OutIt=Book *,
+              _InIt=Book *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\vector(1617): note: while compiling class template member function 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>)'
+          with
+          [
+              _Ty=Book
+          ]
+  c:\users\ak058214\cs303\library book queue\library book queue\library.cpp(37): note: see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>)' being compiled
+          with
+          [
+              _Ty=Book
+          ]
+  c:\users\ak058214\cs303\library book queue\library book queue\library.h(18): note: see reference to class template instantiation 'std::vector<Book,std::allocator<_Ty>>' being compiled
+          with
+          [
+              _Ty=Book
+          ]
+  Priority_Pair.cpp
   Priority_Queue.cpp
   Generating Code...
-  Library Book Queue.vcxproj -> C:\Users\ak058214\cs303\Library Book Queue\Debug\Library Book Queue.exe
