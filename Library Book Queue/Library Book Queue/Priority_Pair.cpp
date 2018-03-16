@@ -1,17 +1,13 @@
 #include "Priority_Pair.h"
 
-struct Priority_Pair
+//default constructor
+Priority_Pair::Priority_Pair()
 {
-	Priority_Pair()
-	{
-		priority = 0;
-	}
-	Priority_Pair(Employee *empa)
-	{
-		emp = empa;
-		priority = 0;
-	}
-	Employee *emp;
-	int priority;
-	Employee *next;
-};
+	priority = 0;
+}
+//overloaded constructor
+Priority_Pair::Priority_Pair(Employee *empa, int priorityA)
+{
+	emp = empa;
+	priority = priorityA;
+}
