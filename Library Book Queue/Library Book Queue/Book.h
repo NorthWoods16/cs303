@@ -1,6 +1,6 @@
 #pragma once
 #include"Date.h"
-//#include "priority_queue"
+#include "Priority_Queue.h"
 #include"Employee.h"
 #include<vector>
 /*What has changed
@@ -20,7 +20,7 @@ class Book
 private:
 	Date start_date, last_pass, end_date;
 	std::string title;
-	//priority_queue<Employee*> queue;
+	Priority_Queue queue;
 	Employee* emp_with_book;
 public:
 	Book();

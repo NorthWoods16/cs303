@@ -5,7 +5,7 @@ Book::Book() : title("") {}
 Book::Book(std::string s) : title(s) {}
 
 bool Book::pass_on(Date curdate) {
-	if (emp_with_book != NULL) {
+	if (emp_with_book != nullptr) {
 		emp_with_book->retaintingTime = last_pass - curdate;
 		last_pass = curdate;
 
@@ -16,7 +16,7 @@ bool Book::pass_on(Date curdate) {
 			return true;
 		}
 		else {
-			emp_with_book = NULL;
+			emp_with_book = nullptr;
 			return false;
 		}
 	}
@@ -34,6 +34,12 @@ bool Book::pass_on(Date curdate) {
 
 void Book::push(Employee* e, int p){
 	queue.push(e, p);
+}
+
+bool Book::contains(Employee*) {
+
+	//see if employee exists in book queue call search function return value
+
 }
 
 void Book::set_title(std::string t) { title = t; }
