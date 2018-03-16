@@ -1,4 +1,5 @@
 #include "Book.h"
+#include "Priority_Queue.h"
 
 Book::Book() : title("") {}
 
@@ -31,7 +32,7 @@ bool Book::pass_on(Date curdate) {
 			return true;
 		}
 		else {
-			//Throw error
+			throw invalid_argument("Error: Employee could not be found");
 		}
 	}
 }
@@ -40,9 +41,8 @@ void Book::push(Employee* e, int p){
 	queue.push(e, p);
 }
 
-bool Book::contains(Employee*) {
-
-	//see if employee exists in book queue call search function return value
+bool Book::contains(Employee*emp) {	
+	queue.search(emp);
 
 }
 
