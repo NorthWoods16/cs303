@@ -17,6 +17,6 @@ public:
 	bool isempty();
 	bool search(Employee *emp);
 	void update(Employee *emp, int priority);
-	Employee* front();
+	Employee* get_front();
 	int getSize();
 };
