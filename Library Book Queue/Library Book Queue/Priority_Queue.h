@@ -1,20 +1,22 @@
 #pragma once
 #include "Priority_Pair.h"
 
-//Priority_Queue defintion. A Queue specific to a book with employees in order of priority. Highest priority at the head.
+/*what did
+	changed insert to push*/
+
 class Priority_Queue
 {
 private:
 	int size;
-	Priority_Pair *head;
+	Priority_Pair *front;
 public:
 	Priority_Queue();
-	void insert(Employee *empa, int priority);
+	void push(Employee *empa, int priority);
 	void pop();
 	void display();
 	bool isempty();
-	bool search(Employee *emp);
-	Employee* front();
+	bool Priority_Queue::search(Employee *emp);
+	void Priority_Queue::update(Employee *emp, int priority);
+	Employee* Priority_Queue::front();
 	int getSize();
-	void update(Employee *emp, int priority);
 };

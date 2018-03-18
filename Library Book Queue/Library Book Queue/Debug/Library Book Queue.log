@@ -1,34 +1,21 @@
 ﻿  Book.cpp
+c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(20): error C2365: 'Priority_Queue::front': redefinition; previous definition was 'data member'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(11): note: see declaration of 'Priority_Queue::front'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\book.cpp(18): error C2248: 'Priority_Queue::front': cannot access private member declared in class 'Priority_Queue'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(11): note: see declaration of 'Priority_Queue::front'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(8): note: see declaration of 'Priority_Queue'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\book.cpp(18): error C2064: term does not evaluate to a function taking 0 arguments
+c:\users\john\source\repos\cs3032\library book queue\library book queue\book.cpp(30): error C2248: 'Priority_Queue::front': cannot access private member declared in class 'Priority_Queue'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(11): note: see declaration of 'Priority_Queue::front'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(8): note: see declaration of 'Priority_Queue'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\book.cpp(30): error C2064: term does not evaluate to a function taking 0 arguments
   Library.cpp
-c:\users\ak058214\cs303\library book queue\library book queue\library.cpp(70): warning C4018: '<': signed/unsigned mismatch
-c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2710): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Book' (or there is no acceptable conversion)
-  c:\users\ak058214\cs303\library book queue\library book queue\book.h(33): note: could be 'Book &Book::operator =(Book &)'
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2710): note: while trying to match the argument list '(Book, Book)'
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2729): note: see reference to function template instantiation '_OutIt std::_Move_unchecked1<_InIt,_OutIt>(_InIt,_InIt,_OutIt,std::_General_ptr_iterator_tag)' being compiled
-          with
-          [
-              _OutIt=Book *,
-              _InIt=Book *
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\vector(1629): note: see reference to function template instantiation '_OutIt *std::_Move_unchecked<Book*,Book*>(_InIt,_InIt,_OutIt)' being compiled
-          with
-          [
-              _OutIt=Book *,
-              _InIt=Book *
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\vector(1617): note: while compiling class template member function 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>)'
-          with
-          [
-              _Ty=Book
-          ]
-  c:\users\ak058214\cs303\library book queue\library book queue\library.cpp(37): note: see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>)' being compiled
-          with
-          [
-              _Ty=Book
-          ]
-  c:\users\ak058214\cs303\library book queue\library book queue\library.h(18): note: see reference to class template instantiation 'std::vector<Book,std::allocator<_Ty>>' being compiled
-          with
-          [
-              _Ty=Book
-          ]
+c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(20): error C2365: 'Priority_Queue::front': redefinition; previous definition was 'data member'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(11): note: see declaration of 'Priority_Queue::front'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\library.cpp(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\john\source\repos\cs3032\library book queue\library book queue\library.cpp(75): warning C4018: '<': signed/unsigned mismatch
+  Priority_Queue.cpp
+c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(20): error C2365: 'Priority_Queue::front': redefinition; previous definition was 'data member'
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.h(11): note: see declaration of 'Priority_Queue::front'
+c:\users\john\source\repos\cs3032\library book queue\library book queue\priority_queue.cpp(124): error C2063: 'Priority_Queue::front': not a function
   Generating Code...

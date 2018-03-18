@@ -1,14 +1,13 @@
 #include "Library.h"
 #include "Employee.h"
 #include<iostream>
-#include<algorithm>
 #include<iterator>
 
 using namespace std;
 
 /*TODO 
 	Add exceptions where they belong
-	define update_queues*/
+*/
 
 void Library::addBook(string bookName) {
 	if (bookName == "")
@@ -22,8 +21,14 @@ void Library::addEmployee(string Name) {
 	if (Name == "")
 		throw invalid_argument("Error: empty string");
 	Employee newEmp;
+
 	newEmp.name = Name;
-	// If there are currently books in the circulating books vector, place a pointer to the employee into the book’s queue by calling the book class’s push function
+
+	if (!circBooks.empty()) {
+		for (int i = 0; i < circBooks.size(); i++) {
+			circBooks[i].push(&newEmp, (newEmp.waitingTime - newEmp.retaintingTime));
+		}
+	}
 }
 
 void Library::circulateBook(string title, Date startDate) {
@@ -62,14 +67,14 @@ bool Library::pass_on(string title, Date curdate) {
 			}
 		}
 	}
-	//throw error if iteration reaches here
+	throw invalid_argument("Error: Title does not exist");
 }
 
 
 void Library::update_queues(Employee* e) {
 	for (int i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].contains(e)) {
-			circBooks[i].update(e);
+			circBooks[i].update(e, e->waitingTime - e->retaintingTime);
 		}
 	}
 }

@@ -13,7 +13,7 @@ Priority_Queue::Priority_Queue()
 }
 
 //inserts a priority_pair into the priority_queue based on the priority
-void Priority_Queue::insert(Employee *empa, int priority)
+void Priority_Queue::push(Employee *empa, int priority)
 {
 	Priority_Pair *tmp, *q;
 	tmp = new Priority_Pair;
@@ -114,7 +114,7 @@ void Priority_Queue::update(Employee *emp, int priority)
 		Priority_Pair* temp = ptr->next;
 		ptr->next = temp->next;
 		delete temp;
-		insert(emp, priority);
+		push(emp, priority);
 		return;
 	}
 }
