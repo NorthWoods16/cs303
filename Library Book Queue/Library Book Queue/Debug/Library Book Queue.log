@@ -1,25 +1,4 @@
 ﻿  Book.cpp
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): error C2228: left of '.isempty' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(12): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): error C2228: left of '.front' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(13): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): error C2228: left of '.pop' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(14): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): error C2228: left of '.isempty' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(24): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): error C2228: left of '.front' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(25): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): error C2228: left of '.pop' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(26): note: type is 'unknown-type'
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): error C2065: 'queue': undeclared identifier
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): error C2228: left of '.push' must have class/struct/union
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(36): note: type is 'unknown-type'
   Library.cpp
 c:\users\ak058214\cs303\library book queue\library book queue\library.cpp(70): warning C4018: '<': signed/unsigned mismatch
 c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xutility(2710): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Book' (or there is no acceptable conversion)
@@ -52,6 +31,4 @@ c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\1
           [
               _Ty=Book
           ]
-  Priority_Pair.cpp
-  Priority_Queue.cpp
   Generating Code...
