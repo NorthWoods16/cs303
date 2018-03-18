@@ -15,8 +15,8 @@ public:
 	void pop();
 	void display();
 	bool isempty();
-	bool Priority_Queue::search(Employee *emp);
-	void Priority_Queue::update(Employee *emp, int priority);
-	Employee* Priority_Queue::front();
+	bool search(Employee *emp);
+	void update(Employee *emp, int priority);
+	Employee* front();
 	int getSize();
 };

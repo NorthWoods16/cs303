@@ -41,7 +41,7 @@ void Book::push(Employee* e, int p){
 	queue.push(e, p);
 }
 
-bool Book::contains(Employee*emp) {	
+bool Book::contains(Employee* emp) {	
 	queue.search(emp);
 
 }
