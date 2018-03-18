@@ -24,7 +24,7 @@ private:
 	Employee* emp_with_book;
 public:
 	Book();
-	Book(std::string);
+	Book(string name);
 	Book(Book&);
 
 	bool pass_on(Date);
@@ -33,8 +33,8 @@ public:
 	void update(Employee* e, int p);
 	Book& operator=(Book& rhs);
 	// Getters and Setters
-	void set_title(std::string);
-	std::string get_title();
+	void set_title(string);
+	string get_title();
 	void set_startDate(Date);
 	Date get_startDate();
 	void set_lastPass(Date);

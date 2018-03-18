@@ -1,10 +1,4 @@
 ﻿  Book.cpp
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(18): error C3867: 'Priority_Queue::get_front': non-standard syntax; use '&' to create a pointer to member
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(18): error C2440: '=': cannot convert from 'Employee *(__cdecl Priority_Queue::* )(void)' to 'Employee *'
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(18): note: There is no context in which this conversion is possible
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(30): error C3867: 'Priority_Queue::get_front': non-standard syntax; use '&' to create a pointer to member
-c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(30): error C2440: '=': cannot convert from 'Employee *(__cdecl Priority_Queue::* )(void)' to 'Employee *'
-  c:\users\ak058214\cs303\library book queue\library book queue\book.cpp(30): note: There is no context in which this conversion is possible
   Library.cpp
 c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\xmemory0(919): error C2558: class 'Book': no copy constructor available or copy constructor is declared 'explicit'
   c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.13.26128\include\vector(947): note: see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
