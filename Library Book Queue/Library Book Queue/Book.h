@@ -9,10 +9,8 @@
 */
 
 /* TODO
-	Merge with updated version of priority_queue
+
 	add Exceptions
-	define contains
-	change everything to nullptr
 	*/
 
 class Book
