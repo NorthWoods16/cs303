@@ -29,6 +29,6 @@ public:
 	void addEmployee(string Name);
 	//book is moved from archived book vector into circulating book vector
 	void circulateBook(string title, Date startDate);
-	//
+	//updates book queues
 	void update_queues(Employee* e);
 };
