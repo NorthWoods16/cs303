@@ -22,5 +22,5 @@ public:
 	void addBook(string bookName);
 	void addEmployee(string Name);
 	void circulateBook(string title, Date startDate);
-	void update_queues(Employee*);
+	void update_queues(Employee* e);
 };
