@@ -1,5 +1,5 @@
-﻿  Library.cpp
-c:\users\john\source\repos\cs3032\library book queue\library book queue\library.cpp(75): warning C4018: '<': signed/unsigned mismatch
+﻿  Book.cpp
+  Library.cpp
 c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\xmemory0(919): error C2558: class 'Book': no copy constructor available or copy constructor is declared 'explicit'
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\vector(947): note: see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
           with
@@ -25,7 +25,7 @@ c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.
           [
               _Ty=Book
           ]
-  c:\users\john\source\repos\cs3032\library book queue\library book queue\library.cpp(17): note: see reference to function template instantiation 'void std::vector<Book,std::allocator<_Ty>>::push_back(const _Ty &)' being compiled
+  c:\users\john\source\repos\cs3032\library book queue\library book queue\library.cpp(22): note: see reference to function template instantiation 'void std::vector<Book,std::allocator<_Ty>>::push_back(const _Ty &)' being compiled
           with
           [
               _Ty=Book
@@ -35,3 +35,4 @@ c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.
           [
               _Ty=Book
           ]
+  Generating Code...

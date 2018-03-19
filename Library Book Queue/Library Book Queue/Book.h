@@ -16,7 +16,9 @@
 class Book
 {
 private:
+	//date objects
 	Date start_date, last_pass, end_date;
+	//book title
 	string title;
 	Priority_Queue queue;
 	Employee* emp_with_book;
@@ -30,7 +32,7 @@ public:
 	bool pass_on(Date);
 	//calls queues push function
 	void push(Employee* e, int priority);
-	//
+	//checks to see if employee holds book
 	bool contains(Employee* emp);
 	void update(Employee* e, int p);
 	Book& operator=(Book& rhs);

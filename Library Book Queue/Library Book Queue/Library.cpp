@@ -90,7 +90,7 @@ bool Library::pass_on(string title, Date curdate) {
 }
 //updates book queues
 void Library::update_queues(Employee* e) {
-	for (int i = 0; i < circBooks.size(); i++) {
+	for (unsigned int i = 0; i < circBooks.size(); i++) {
 		//checks in circBooks for employee passed in
 		if (circBooks[i].contains(e)) {
 			//book method update is called an waiting times are updated
