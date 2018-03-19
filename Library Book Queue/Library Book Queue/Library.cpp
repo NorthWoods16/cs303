@@ -25,7 +25,7 @@ void Library::addEmployee(string Name) {
 	newEmp.name = Name;
 
 	if (!circBooks.empty()) {
-		for (int i = 0; i < circBooks.size(); i++) {
+		for (unsigned int i = 0; i < circBooks.size(); i++) {
 			circBooks[i].push(&newEmp, (newEmp.waitingTime - newEmp.retaintingTime));
 		}
 	}
