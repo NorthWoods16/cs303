@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/*TODO 
+/*TODO
 	Add exceptions where they belong
 	Clean code up in function circluate books
 */
@@ -24,11 +24,11 @@ void Library::addBook(string bookName) {
 void Library::addEmployee(string Name) {
 	if (Name == "")
 		throw invalid_argument("Error: empty string");
-	Employees.push_back(Name);
+	Employees.push_back(new Employee(Name));
 
 	// Adds employee to any queues that are active
 	if (!circBooks.empty()) {
-		Employee *emp = &Employees[Employees.size() - 1];
+		Employee *emp = Employees[Employees.size() - 1];
 		for (size_t i = 0; i < circBooks.size(); i++) {
 			circBooks[i].push(emp, (emp->waitingTime - emp->retaintingTime));
 		}
@@ -45,7 +45,7 @@ void Library::circulateBook(string title, Date startDate) {
 			archBooks.erase(archBooks.begin() + i);
 
 			for (size_t j = 0; j < Employees.size(); j++)
-				circBooks[circBooks.size() - 1].push(&Employees[j], getPriority(Employees[j]));
+				circBooks[circBooks.size() - 1].push(Employees[j], getPriority(Employees[j]));
 
 			return;
 		}
@@ -55,12 +55,12 @@ void Library::circulateBook(string title, Date startDate) {
 }
 
 // Pass book on to the next person and return bool value for if the book was passed on
-bool Library::pass_on(string title, Date curdate) 
+bool Library::pass_on(string title, Date curdate)
 {
 	for (size_t i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].get_title() == title) {
 			Employee* prev_holder = circBooks[i].getHolder();
-			
+
 			// Tests for if there is anyone left to pass to
 			if (circBooks[i].pass_on(curdate)) {
 				update_queues(prev_holder);
@@ -89,7 +89,7 @@ void Library::update_queues(Employee* e) {
 	}
 }
 
-int Library::getPriority(Employee &emp) {
-	return emp.waitingTime - emp.retaintingTime;
+int Library::getPriority(Employee* emp) {
+	return emp->waitingTime - emp->retaintingTime;
 }
 
