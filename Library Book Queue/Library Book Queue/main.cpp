@@ -1,17 +1,52 @@
 #include"Date.h"
 #include<iostream>
+#include "Library.h"
 
-using namespace std;
+/*TODO
+Create more tests*/
 
 void main()
 {
-	//Date date_1(2013, 2, 10); //add a date with the US format(mm-dd-yyy). The date is Feb 10, 2013
-	//Date date_2(2014, 5, 1); //add a date with the US format(mm-dd-yyy). The date is May 1, 2014
-	//Date date_3("5-1-2014"); //add a date with the US format(mm-dd-yyyy), the date is May 1, 2014
-	//Date date_4("2014-5-1", DateFormat::Standard); //add a date with the standard format(yyyy-mm--dd), the date is May 1, 2014
-	//date_1.add_days(5); //add 5 days to date_1
-	//bool larger = date_1 > date_2; //compare if date_1 > date_2
-	//bool equal = date_1 == date_2; //compare if date_1 == date_2
-	//string text = date_1.toString(); //conver date_1 to string (the string will be made based on the format
+	Library library;
+	library.addBook("Software Engineering");
+	library.addBook("Chemistry");
+
+	library.addEmployee("Adam");
+	library.addEmployee("Sam");
+	library.addEmployee("Ann");
+
+	library.circulateBook("Chemistry", Date(2015, 3, 1, DateFormat::US));
+	library.circulateBook("Software Engineering", Date(2015, 4, 1, DateFormat::US));
+
+	library.pass_on("Chemistry", Date(2015, 3, 5, DateFormat::US));
+	library.pass_on("Chemistry", Date(2015, 3, 7, DateFormat::US));
+	library.pass_on("Chemistry", Date(2015, 3, 8, DateFormat::US));
+
+	library.addBook("Sk8 Fast & Eat A$$");
+	library.addBook("Dreams of Memes");
+
+	library.circulateBook("Sk8 Fast & Eat A$$", Date(2015, 4, 15, DateFormat::US));
+	library.circulateBook("Dreams of Memes", Date(2015, 5, 1, DateFormat::US));
+
+	library.pass_on("Software Engineering", Date(2015, 4, 5, DateFormat::US));
+	library.pass_on("Software Engineering", Date(2015, 4, 10, DateFormat::US));
+	library.pass_on("Software Engineering", Date(2015, 4, 15, DateFormat::US));
+
+	library.addEmployee("James");
+	library.addEmployee("Sandy");
+	library.addEmployee("Dinkleberg");
+
+	Date passDate(2015, 4, 20, DateFormat::US);
+	while (library.pass_on("Sk8 Fast & Eat A$$", passDate)) {
+		passDate.add_days(3);
+	}
+	
+	try {
+		library.pass_on("Why Does my Mother Hit Me", Date(2015, 4, 20, DateFormat::US));
+	}
+	catch (invalid_argument e) {
+		std::cout << "Error successfully caught";
+	}
+	system("pause");
 
 }
