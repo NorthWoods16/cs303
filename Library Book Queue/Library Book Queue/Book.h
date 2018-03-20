@@ -9,42 +9,54 @@
 */
 
 /* TODO
-
 	add Exceptions
+	define contains
+	change everything to nullptr
 	*/
 
 class Book
 {
 private:
-	//date objects
 	Date start_date, last_pass, end_date;
-	//book title
 	string title;
 	Priority_Queue queue;
 	Employee* emp_with_book;
 public:
-	//default book constructor
+	// Constructors
 	Book();
-	//book contstructor that sets the title of the book
-	Book(string name);
-	Book(Book&);
-	//sets book to next person in queue
+	Book(std::string name);
+	Book(const Book&);
+
 	bool pass_on(Date);
-	//calls queues push function
 	void push(Employee* e, int priority);
-	//checks to see if employee holds book
 	bool contains(Employee* emp);
 	void update(Employee* e, int p);
-	Book& operator=(Book& rhs);
+	Book& operator=(const Book& rhs);
+
 	// Getters and Setters
-	void set_title(string);
-	string get_title();
-	void set_startDate(Date);
-	Date get_startDate();
-	void set_lastPass(Date);
-	Date get_lastPass();
-	void set_endDate(Date);
-	Date get_endDate();
-	Employee* getHolder();
+	void set_title(std::string t) { title = t; }
+
+	string get_title() { return title; }
+
+	// 
+	void set_startDate(Date); // Has multiple lines, defined in cpp
+
+	// Returns the date the book went into circulation
+	Date get_startDate() { return start_date; }
+
+	// Allows for updating of the last pass date
+	void set_lastPass(Date last) { last_pass = last; }
+
+	// Returns the last date the book was passed on
+	Date get_lastPass() { return last_pass; }
+
+	// Allows for updating the end Date
+	void set_endDate(Date end) { end_date = end; }
+
+	// Returns the enddate for when the book was archieved
+	Date get_endDate() { return end_date; }
+
+	// Returns a pointer to the employee who is holding the book
+	Employee* getHolder() { return emp_with_book; }
 
 };
