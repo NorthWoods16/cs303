@@ -17,7 +17,7 @@ private:
 	vector<Employee*> Employees;
 	vector<Book> circBooks;
 	vector<Book> archBooks;
-	int getPriority(Employee&);
+	int getPriority(Employee*);
 public:
 	bool pass_on(string title, Date curdate);
 	void addBook(string bookName);
