@@ -8,5 +8,5 @@ struct Priority_Pair
 	Employee *emp;
 	Priority_Pair *next;
 	Priority_Pair();
-	Priority_Pair(Employee *emp, int priority);
+	Priority_Pair(Employee *emp, int priority, Priority_Pair*);
 };
