@@ -9,32 +9,36 @@
 */
 
 /* TODO
-	Merge with updated version of priority_queue
+
 	add Exceptions
-	define contains
-	change everything to nullptr
 	*/
 
 class Book
 {
 private:
+	//date objects
 	Date start_date, last_pass, end_date;
-	std::string title;
+	//book title
+	string title;
 	Priority_Queue queue;
 	Employee* emp_with_book;
 public:
+	//default book constructor
 	Book();
-	Book(std::string);
+	//book contstructor that sets the title of the book
+	Book(string name);
 	Book(Book&);
-
+	//sets book to next person in queue
 	bool pass_on(Date);
-	void push(Employee*, int priority);
-	bool contains(Employee*);
-	void update(Employee*, int p);
+	//calls queues push function
+	void push(Employee* e, int priority);
+	//checks to see if employee holds book
+	bool contains(Employee* emp);
+	void update(Employee* e, int p);
 	Book& operator=(Book& rhs);
 	// Getters and Setters
-	void set_title(std::string);
-	std::string get_title();
+	void set_title(string);
+	string get_title();
 	void set_startDate(Date);
 	Date get_startDate();
 	void set_lastPass(Date);

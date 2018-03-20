@@ -120,7 +120,7 @@ void Priority_Queue::update(Employee *emp, int priority)
 }
 
 //returns the employee at the front
-Employee* Priority_Queue::front()
+Employee* Priority_Queue::get_front()
 {
 	return head->emp;
 }
