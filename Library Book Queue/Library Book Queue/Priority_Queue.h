@@ -1,8 +1,7 @@
 #pragma once
 #include "Priority_Pair.h"
 
-/*what did
-	changed insert to push*/
+/*Class declaration for Priority Queue with queue functions, getters and size and head member variables*/
 
 class Priority_Queue
 {

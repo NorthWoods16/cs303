@@ -2,11 +2,6 @@
 #include <iostream>
 using namespace std;
 
-/*TODO
-Run through code and make sure logic all works properly
-add errors where errors should be added
-clean up the code*/
-
 //default constructor
 Priority_Queue::Priority_Queue() : head(nullptr), size(0) {}
 
@@ -45,8 +40,10 @@ void Priority_Queue::display()
 	Priority_Pair *ptr;
 	ptr = new Priority_Pair;
 	ptr = head;
+	//if queue is empty throw exception
 	if (head == nullptr)
 		throw invalid_argument("Queue is empty\n");
+	//else show all contents of the queue
 	else
 	{
 		cout << "Queue is :\n";
@@ -65,7 +62,7 @@ bool Priority_Queue::isempty()
 	return size == 0;
 }
 
-//searches the queue for an Employee match and the priority
+//searches the queue for an Employee match and returns true if found
 bool Priority_Queue::search(Employee *emp)
 {
 	Priority_Pair *ptr = head;
@@ -125,6 +122,7 @@ int Priority_Queue::getSize()
 	return size;
 }
 
+//overloaded assignment operator
 Priority_Queue& Priority_Queue::operator=(const Priority_Queue& rhs) {
 	while (head != nullptr)
 		pop();
