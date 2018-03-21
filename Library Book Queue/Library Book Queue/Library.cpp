@@ -5,10 +5,6 @@
 
 using namespace std;
 
-/*TODO
-	Add exceptions where they belong
-	Clean code up in function circluate books
-*/
 
 // Creates a book object and inserts it into the archieved books array
 void Library::addBook(string bookName) {
@@ -38,15 +34,14 @@ void Library::addEmployee(string Name) {
 // Moves an archieved book into circulation and loads its queue
 void Library::circulateBook(string title, Date startDate) {
 	for (size_t i = 0; i < archBooks.size(); i++) {
-
+		//title is searched for in arhcived books
 		if (archBooks[i].get_title() == title) {
 			circBooks.push_back(archBooks[i]);
 			circBooks[circBooks.size() - 1].set_startDate(startDate);
 			archBooks.erase(archBooks.begin() + i);
-
+			//the employee priority for books in circulation is updated
 			for (size_t j = 0; j < Employees.size(); j++)
 				circBooks[circBooks.size() - 1].push(Employees[j], getPriority(Employees[j]));
-
 			return;
 		}
 	}
@@ -60,7 +55,6 @@ bool Library::pass_on(string title, Date curdate)
 	for (size_t i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].get_title() == title) {
 			Employee* prev_holder = circBooks[i].getHolder();
-
 			// Tests for if there is anyone left to pass to
 			if (circBooks[i].pass_on(curdate)) {
 				update_queues(prev_holder);
@@ -76,6 +70,7 @@ bool Library::pass_on(string title, Date curdate)
 			}
 		}
 	}
+	//if this point is reached the title does not exist
 	throw invalid_argument("Error: Title does not exist");
 }
 
@@ -88,7 +83,7 @@ void Library::update_queues(Employee* e) {
 		}
 	}
 }
-
+//returns priority
 int Library::getPriority(Employee* emp) {
 	return emp->waitingTime - emp->retaintingTime;
 }
