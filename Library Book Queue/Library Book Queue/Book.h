@@ -9,7 +9,6 @@
 */
 
 /* TODO
-	Merge with updated version of priority_queue
 	add Exceptions
 	define contains
 	change everything to nullptr
@@ -23,8 +22,9 @@ private:
 	Priority_Queue queue;
 	Employee* emp_with_book;
 public:
+	// Constructors
 	Book();
-	Book(string name);
+	Book(std::string name);
 	Book(const Book&);
 
 	bool pass_on(Date);
@@ -32,15 +32,31 @@ public:
 	bool contains(Employee* emp);
 	void update(Employee* e, int p);
 	Book& operator=(const Book& rhs);
+
 	// Getters and Setters
-	void set_title(string);
-	string get_title();
-	void set_startDate(Date);
-	Date get_startDate();
-	void set_lastPass(Date);
-	Date get_lastPass();
-	void set_endDate(Date);
-	Date get_endDate();
-	Employee* getHolder();
+	void set_title(std::string t) { title = t; }
+
+	string get_title() { return title; }
+
+	// 
+	void set_startDate(Date); // Has multiple lines, defined in cpp
+
+	// Returns the date the book went into circulation
+	Date get_startDate() { return start_date; }
+
+	// Allows for updating of the last pass date
+	void set_lastPass(Date last) { last_pass = last; }
+
+	// Returns the last date the book was passed on
+	Date get_lastPass() { return last_pass; }
+
+	// Allows for updating the end Date
+	void set_endDate(Date end) { end_date = end; }
+
+	// Returns the enddate for when the book was archieved
+	Date get_endDate() { return end_date; }
+
+	// Returns a pointer to the employee who is holding the book
+	Employee* getHolder() { return emp_with_book; }
 
 };

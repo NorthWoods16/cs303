@@ -2,50 +2,38 @@
 #include <iostream>
 using namespace std;
 
-int size;
-Priority_Pair *head;
+/*TODO
+Run through code and make sure logic all works properly
+add errors where errors should be added
+clean up the code*/
 
 //default constructor
-Priority_Queue::Priority_Queue()
-{
-	head->next = nullptr;
-	size = 0;
-}
+Priority_Queue::Priority_Queue() : head(nullptr), size(0) {}
+
 
 //inserts a priority_pair into the priority_queue based on the priority
-void Priority_Queue::push(Employee *empa, int priority)
-{
-	Priority_Pair *tmp, *q;
-	tmp = new Priority_Pair;
-	tmp->emp = empa;
-	tmp->priority = priority;
-	if (head->emp == nullptr || priority > head->priority)
-	{
-		tmp->next = head;
-		head = tmp;
-		size++;
-	}
-	else
-	{
-		q = head;
+void Priority_Queue::push(Employee *empa, int priority) {
+	if (head == nullptr || priority > head->priority)
+		head = new Priority_Pair(empa, priority, head);
+
+	else {
+		Priority_Pair* q = head;
 		while (q->next != nullptr && q->next->priority >= priority)
 			q = q->next;
-		tmp->next = q->next;
-		q->next = tmp;
-		size++;
+
+		q->next = new Priority_Pair(empa, priority, q->next);
 	}
+	size++;
 }
 
+
 //Removes the priority pair from the head of the queue
-void Priority_Queue::pop()
-{
-	Priority_Pair *tmp;
-	tmp = new Priority_Pair;
+void Priority_Queue::pop() {
 	if (head == nullptr)
 		throw invalid_argument("Queue is empty\n");
-	else
-		tmp = head;
-	cout << "Deleted " << tmp->emp->name << "from queue\n";
+
+	Priority_Pair *tmp = head;
+	// cout << "Deleted " << tmp->emp->name << "from queue\n";
 	head = head->next;
 	delete tmp;
 	size--;
@@ -74,50 +62,57 @@ void Priority_Queue::display()
 //returns if queue is empty or not
 bool Priority_Queue::isempty()
 {
-	if (size == 0)
-		return true;
-	else
-		return false;
+	return size == 0;
 }
 
 //searches the queue for an Employee match and the priority
 bool Priority_Queue::search(Employee *emp)
 {
-	Priority_Pair *ptr;
-	ptr = new Priority_Pair;
-	if (head == nullptr)
-		throw invalid_argument("Queue is empty\n");
-	else
+	Priority_Pair *ptr = head;
+	while (ptr != nullptr)
 	{
-		while (ptr != nullptr)
-		{
-			if (ptr->emp == emp)
-				return true;
-			ptr = ptr->next;
-		}
-		return false;
+		if (ptr->emp == emp)
+			return true;
+
+		ptr = ptr->next;
 	}
+	return false;
 }
+
+
 //Finds the employee in the queue, removes them then reinserts them into the queue with the new priority
 void Priority_Queue::update(Employee *emp, int priority)
 {
-	Priority_Pair *ptr;
-	ptr = new Priority_Pair;
 	if (head == nullptr)
 		throw invalid_argument("Queue is empty\n");
-	else
-	{
-		while (ptr->next->emp != emp)
-		{
-			ptr = ptr->next;
-		}
-		Priority_Pair* temp = ptr->next;
-		ptr->next = temp->next;
-		delete temp;
+
+	// Catch case where the employee is at the head of the queue
+	// Added as part of bug fix
+	if (head->emp == emp) {
+		pop();
 		push(emp, priority);
-		return;
+	}
+
+	else {
+		Priority_Pair* ptr = head;
+		while (ptr != nullptr && ptr->next->emp != emp)
+			ptr = ptr->next;
+
+		// Test if the item was found
+		if (ptr != nullptr) {
+			Priority_Pair* temp = ptr->next;
+			ptr->next = temp->next;
+			delete temp;
+
+			// Update the priority then push back into queue
+			push(emp, priority);
+		}
+		else {
+			throw invalid_argument("Item is not in the queue\n");
+		}
 	}
 }
+
 
 //returns the employee at the front
 Employee* Priority_Queue::get_front()
@@ -128,4 +123,16 @@ Employee* Priority_Queue::get_front()
 int Priority_Queue::getSize()
 {
 	return size;
+}
+
+Priority_Queue& Priority_Queue::operator=(const Priority_Queue& rhs) {
+	while (head != nullptr)
+		pop();
+
+	Priority_Pair* ptr = rhs.head;
+	while (ptr != nullptr) {
+		push(ptr->emp, ptr->priority);
+		ptr = ptr->next;
+	}
+	return *this;
 }

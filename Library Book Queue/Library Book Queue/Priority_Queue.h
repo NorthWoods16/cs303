@@ -8,7 +8,7 @@ class Priority_Queue
 {
 private:
 	int size;
-	Priority_Pair *front;
+	Priority_Pair *head;
 public:
 	Priority_Queue();
 	void push(Employee *empa, int priority);
@@ -18,5 +18,6 @@ public:
 	bool search(Employee *emp);
 	void update(Employee *emp, int priority);
 	Employee* get_front();
+	Priority_Queue& operator= (const Priority_Queue&);
 	int getSize();
 };

@@ -5,64 +5,73 @@
 
 using namespace std;
 
-/*TODO 
+/*TODO
 	Add exceptions where they belong
+	Clean code up in function circluate books
 */
 
+// Creates a book object and inserts it into the archieved books array
 void Library::addBook(string bookName) {
 	if (bookName == "")
 		throw invalid_argument("Error: empty string");
-	Book newBook;
-	newBook.set_title(bookName);
-	archBooks.push_back(newBook);
+
+	// Push book to archieved books vector
+	archBooks.push_back(bookName);
 }
 
+
+// Adds employee to the class and inserts employee into the queue of any books that are curently circulating*/
 void Library::addEmployee(string Name) {
 	if (Name == "")
 		throw invalid_argument("Error: empty string");
-	Employee newEmp;
+	Employees.push_back(new Employee(Name));
 
-	newEmp.name = Name;
-
+	// Adds employee to any queues that are active
 	if (!circBooks.empty()) {
-		for (int i = 0; i < circBooks.size(); i++) {
-			circBooks[i].push(&newEmp, (newEmp.waitingTime - newEmp.retaintingTime));
+		Employee *emp = Employees[Employees.size() - 1];
+		for (size_t i = 0; i < circBooks.size(); i++) {
+			circBooks[i].push(emp, (emp->waitingTime - emp->retaintingTime));
 		}
 	}
 }
 
+// Moves an archieved book into circulation and loads its queue
 void Library::circulateBook(string title, Date startDate) {
-	Book newBook;
-	bool found = false;
-	for (unsigned int i = 0; i < archBooks.size(); i++) {
+	for (size_t i = 0; i < archBooks.size(); i++) {
+
 		if (archBooks[i].get_title() == title) {
-			newBook.set_title(archBooks[i].get_title());
-			newBook.set_startDate(startDate);
-			circBooks.push_back(newBook);
-			archBooks.erase(archBooks.begin() + (i - 1));
-			found = true;
-			break;
-		}
-		if (i == (archBooks.size() - 1) && !found) {
-			throw invalid_argument("Error: title not found");
+			circBooks.push_back(archBooks[i]);
+			circBooks[circBooks.size() - 1].set_startDate(startDate);
+			archBooks.erase(archBooks.begin() + i);
+
+			for (size_t j = 0; j < Employees.size(); j++)
+				circBooks[circBooks.size() - 1].push(Employees[j], getPriority(Employees[j]));
+
+			return;
 		}
 	}
-
+	// If the loop exits normally, then the book does not exist
+	throw invalid_argument("Error: title not found");
 }
 
-bool Library::pass_on(string title, Date curdate) {
+// Pass book on to the next person and return bool value for if the book was passed on
+bool Library::pass_on(string title, Date curdate)
+{
 	for (size_t i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].get_title() == title) {
 			Employee* prev_holder = circBooks[i].getHolder();
+
+			// Tests for if there is anyone left to pass to
 			if (circBooks[i].pass_on(curdate)) {
 				update_queues(prev_holder);
 				return true;
 			}
+			// If no one left to pass to, archieve the book
 			else {
 				update_queues(prev_holder);
 				circBooks[i].set_endDate(curdate);
 				archBooks.push_back(circBooks[i]);
-				circBooks.erase(circBooks.begin() + (i - 1));
+				circBooks.erase(circBooks.begin() + (i));
 				return false;
 			}
 		}
@@ -71,11 +80,16 @@ bool Library::pass_on(string title, Date curdate) {
 }
 
 
+// Updates all book queues In which the given employee is located
 void Library::update_queues(Employee* e) {
 	for (int i = 0; i < circBooks.size(); i++) {
 		if (circBooks[i].contains(e)) {
 			circBooks[i].update(e, e->waitingTime - e->retaintingTime);
 		}
 	}
+}
+
+int Library::getPriority(Employee* emp) {
+	return emp->waitingTime - emp->retaintingTime;
 }
 
