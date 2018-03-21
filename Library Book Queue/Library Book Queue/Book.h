@@ -25,13 +25,13 @@ private:
 public:
 	Book();
 	Book(string name);
-	Book(Book&);
+	Book(const Book&);
 
 	bool pass_on(Date);
 	void push(Employee* e, int priority);
 	bool contains(Employee* emp);
 	void update(Employee* e, int p);
-	Book& operator=(Book& rhs);
+	Book& operator=(const Book& rhs);
 	// Getters and Setters
 	void set_title(string);
 	string get_title();

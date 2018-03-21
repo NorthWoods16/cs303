@@ -5,7 +5,7 @@ Book::Book() : title("") {}
 
 Book::Book(std::string s) : title(s) {}
 
-Book::Book(Book& other) {
+Book::Book(const Book& other) {
 	*this = other;
 }
 
@@ -78,7 +78,7 @@ void Book::update(Employee* e, int p) {
 }
 
 
-Book& Book::operator=(Book& RHS) {
+Book& Book::operator=(const Book& RHS) {
 	title = RHS.title;
 	start_date = RHS.start_date;
 	last_pass = RHS.last_pass;
